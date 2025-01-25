@@ -1,24 +1,24 @@
-from dotenv import load_dotenv
-import os 
-import google.generativeai as genai
-from gtts import gTTS
+import google.generativeai as genai  # Biblioteca para interação com o GEMINI
+from gtts import gTTS  # Biblioteca para conversão de texto em áudio
 
-load_dotenv()
 
 def configure_bot():
-    api_key = os.getenv("GEMINI_API_KEY")
-    if not api_key:
+    api_key = "Sua chave API GEMINI"  # Chave da API do GEMINI
+    if not api_key:  # Verifica se a Chave é valida
         raise ValueError("The GEMINI_API_KEY environment variable is not set.")
-    genai.configure(api_key=api_key)
-    return genai.GenerativeModel(model_name="gemini-1.5-flash",
-    system_instruction="Você é um chatbot"                            
-    )                             
+    genai.configure(api_key=api_key)  # Configura o GEMINI
+    return genai.GenerativeModel(
+        model_name="gemini-1.5-flash",
+        system_instruction="Você é um Assistente Virtual",  # Configuração de Modelo e Instrução de Sistema
+    )
 
-def response(model, prompt):
-    resposta = model.generate_content(prompt, stream=True)
-    resposta.resolve()
+
+def response(model, prompt):  # Função para gerar Resposta
+    resposta = model.generate_content(prompt, stream=True)  # Gera a resposta
+    resposta.resolve()  # Finaliza a geração
     return resposta.text
 
-def gerar_audio(respota):
-    audio = gTTS(text=respota, lang='pt')
-    audio.save('src/media/resposta.mp3')
+
+def gerar_audio(resposta):  # Função para gerar Resposta como Audio
+    audio = gTTS(text=resposta, lang="pt")  # Converte texto em áudio
+    audio.save("src/media/resposta.mp3")  # Salva o áudio gerado

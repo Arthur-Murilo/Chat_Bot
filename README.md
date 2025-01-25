@@ -1,7 +1,7 @@
 ## Licença
 
 Este projeto é licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
+---
 # 🧠 Chatbot Assistente IA
 
 Este projeto é um chatbot com interface gráfica que utiliza a biblioteca **Google Generative AI** (GEMINI) para gerar respostas inteligentes a partir de prompts fornecidos pelo usuário. Além disso, ele converte as respostas geradas em áudio usando a biblioteca **gTTS** (Google Text-to-Speech).

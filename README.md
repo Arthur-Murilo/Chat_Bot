@@ -117,13 +117,6 @@ pip install -r requirements.txt
 
 ---
 
-## 📷 Screenshots
-
-- **Tela Principal**:
-  *Adicione aqui uma imagem da interface*
-
----
-
 ## 📌 Notas
 
 - Certifique-se de que a chave API GEMINI esteja correta e ativa.
